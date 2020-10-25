@@ -1,40 +1,60 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-	<style>
-		html, body {
-			margin: 0;
-			padding: 0;
-		}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>Off Orbit for Game Boy</title>
 
-		.gameboy-container {
-			background: white;
-			box-sizing: border-box;
-			overflow: auto;
-			position: relative;
-			max-width: 600px;
-			margin: 0 auto;
-			padding: 30px;
-		}
-
-		.gameboy {
-			background: url('gameboy.png') no-repeat;
-			background-size: 100%;
-			width: 100%;
-			padding-bottom: 162.79069%;
-			box-sizing: border-box;
-			image-rendering: auto;
-			image-rendering: crisp-edges;
-			image-rendering: pixelated;
-		}
-	</style>
+	<link href="/css/main.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 
 <body>
-	<div class="gameboy-container">
-		<div class="gameboy"></div>
-	</div>
-</body>
+	<main>
+		<h1>Off Orbit</h1>
 
+		<p class="tagline editable">
+			An asteroids style game for Game Boy.
+		</p>
+
+		<div class="gameboy-container">
+			<div class="gameboy">
+				<canvas id="gameboy-screen" width="160" height="144">Your browser does not seem to support canvas.</canvas>
+				<div class="gameboy-buttons">
+					<button type="button" class="gameboy-button gameboy-button--menu" id="button-start">START</button>
+					<button type="button" class="gameboy-button gameboy-button--menu" id="button-select">SELECT</button>
+					<button type="button" class="gameboy-button gameboy-button--action" id="button-b">B</button>
+					<button type="button" class="gameboy-button gameboy-button--action" id="button-a">A</button>
+					<button type="button" class="gameboy-button gameboy-button--dpad" id="button-down">DOWN</button>
+					<button type="button" class="gameboy-button gameboy-button--dpad" id="button-up">UP</button>
+					<button type="button" class="gameboy-button gameboy-button--dpad" id="button-left">LEFT</button>
+					<button type="button" class="gameboy-button gameboy-button--dpad" id="button-right">RIGHT</button>
+				</div>
+			</div>
+		</div>
+
+		<table>
+			<thead>
+				<tr><th>Button</th><th>Key</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>A</td><td>G</td></tr>
+				<tr><td>B</td><td>B</td></tr>
+				<tr><td>Start</td><td>H</td></tr>
+				<tr><td>Select</td><td>N</td></tr>
+				<tr><td>Directional pad</td><td>Arrow keys</td></tr>
+			</tbody>
+		</table>
+	</main>
+
+	<footer>
+		<p class="author editable">
+			&copy; 2020 <a href="https://rossphillips.nz/">Ross Phillips</a>
+		</p>
+	</footer>
+
+	<script src="/js/gameboy.js"></script>
+	<script src="/js/index.js"></script>
+</body>
 </html>
