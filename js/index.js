@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	ajaxReader.loadFromUrl('/roms/off-orbit.gb');
 
+	document.getElementById('mute').addEventListener('change', function (e) {
+		if (this.checked) {
+			gameboy.cpu.apu.disconnect();
+		} else {
+			gameboy.cpu.apu.connect();
+		}
+	});
+
 	// Prevent the default action for space and arrow keys to stop scrolling while playing
 	window.addEventListener('keydown', function(e) {
 		if ([32, 37, 38, 39, 40].indexOf(e.keyCode) >= 0) {
@@ -43,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				buttonEl.classList.remove('gameboy-button__pulse');
 				gameboy.input.releaseKey(key);
 				keys[key] = false;
-			}, 30);
+			}, 50);
 		});
 	}
 
